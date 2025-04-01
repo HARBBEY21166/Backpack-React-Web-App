@@ -26,7 +26,42 @@ const daysOfWeek = [
     index: 0,
     isWeekend: true,
   },
-  // ...
+  {
+    name: 'Monday',
+    nameAbbr: 'Mon',
+    index: 1,
+    isWeekend: false,
+  },
+  {
+    name: 'Tuesday',
+    nameAbbr: 'Tues',
+    index: 2,
+    isWeekend: false,
+  },
+  {
+    name: 'Wednesday',
+    nameAbbr: 'Wed',
+    index: 3,
+    isWeekend: false,
+  },
+  {
+    name: 'Thursday',
+    nameAbbr: 'Thur',
+    index: 4,
+    isWeekend: false,
+  },
+  {
+    name: 'Friday',
+    nameAbbr: 'Fri',
+    index: 5,
+    isWeekend: false,
+  },
+  {
+    name: 'Saturday',
+    nameAbbr: 'Sat',
+    index: 6,
+    isWeekend: true,
+  },
 ];
 
 export default class App extends Component {
@@ -55,10 +90,11 @@ export default class App extends Component {
       <div className={getClassName('App')}>
     <header className={getClassName('App__header')}>
       <div className={getClassName('App__header-inner')}>
-        <BpkText tagName="h1" textStyle="xxl" className={getClassName('App__heading')}>Flight Schedule</BpkText>
+        <BpkText tagName="h1" textStyle="xxl" className={getClassName('App__heading')}>Flight Schedules</BpkText>
       </div>
     </header>
     <main className={getClassName('App__main')}>
+      <div>
         <BpkInput
           id="dateInput"
           type={INPUT_TYPES.text}
@@ -67,7 +103,6 @@ export default class App extends Component {
           placeholder="Departure date"
         />
         <BpkCalendar 
-        className={getClassName('App__heading')}
           id="calendar"
           onDateSelect={this.handleDateSelect}
           formatMonth={formatMonth}
@@ -79,6 +114,7 @@ export default class App extends Component {
           previousMonthLabel="Previous month"
           selectionConfiguration={this.state.selectionConfiguration}
         />
+        </div>
 
 <BpkButton onClick={() => alert('It works!')}>Continue</BpkButton>
         </main>
